@@ -1,0 +1,1212 @@
+/* SMACSS: SCALABLE AND MODULER ARCHITECTURE FOR CSS:  */
+
+/* Base:  */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Layout: Defines structure of the page*/
+.container {
+  max-width: 1280px;
+  margin: auto;
+  //   background-color: red;
+}
+
+.common-head {
+  font-family: sans-serif;
+  font-weight: 600;
+  margin: 2rem 0 0 0;
+  text-align: center;
+  font-size: 2rem;
+  line-height: 2;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+}
+
+.common-subhead {
+  font-family: sans-serif;
+  font-weight: 600;
+  text-align: center;
+  font-size: 1.2rem;
+  margin: 0 0 2rem 0;
+  letter-spacing: 0.1rem;
+  color: #666;
+  text-transform: capitalize;
+}
+
+.head {
+  font-size: 1.1rem;
+  letter-spacing: 0.1rem;
+  font-family: sans-serif;
+  color: var(--kaala-color);
+  margin: 1rem 0 0.5rem 0;
+}
+/* Module:*/
+/* State:  */
+/* Theme: */
+
+/* Defining a variable:*/
+:root {
+  --Theme-color: #241a92;
+  --kaala-color: #000;
+}
+
+header {
+  width: 100%;
+  height: 120px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 1);
+
+  z-index: 1000; //this z-index value is used for laying the header.
+
+  //if we want to make the things invisible while scrolling in that case we need to use: backdrop filter, using transition
+  backdrop-filter: 0.3s ease;
+
+  & .container {
+    // HERE I NEED TO OVERWRITE THE CONTAINER FOR GETTING NEW HEIGHT AND WEIGHT FOR ADJUSTING LOGO AS WELL AS LINK:
+
+    max-width: 1280px;
+    height: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    & .logo {
+      height: 100%;
+      margin: 1px 2px;
+
+      flex-basis: 30%;
+
+      & img {
+        width: 80%;
+        height: 100%;
+      }
+    }
+
+    & .navbar1 {
+      margin: 1rem 2rem;
+      flex-basis: 50%;
+
+      & .navlist {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        list-style-type: none;
+        gap: 2rem;
+
+        & a {
+          text-transform: uppercase;
+          text-decoration: none;
+          font-size: 1.2rem;
+          color: var(--kaala-color);
+
+          &:hover {
+            color: var(--Theme-color);
+            font-weight: 500;
+            transition: 0.1s linear;
+            -webkit-transition: 0.1s linear;
+            -moz-transition: 0.1s linear;
+            -ms-transition: 0.1s linear;
+            -o-transition: 0.1s linear;
+          }
+        }
+      }
+
+         & .bar{
+          position: absolute;
+          font-size: 1.5rem;
+          right: 7rem;
+          top: 3rem;
+          cursor: pointer;
+          //HERE I NEED TO REMOVE FOR BIG DEVISE ,SO DISPLAY NONE, ONLY VISIBLE TO PHONE SIZE DEVICES:
+          display: none;
+        }
+
+    }
+
+    & .navbar2 {
+      flex-basis: 20%;
+      margin: 1rem 2rem;
+
+      & .navlist {
+        list-style-type: none;
+        & a {
+          color: var(--kaala-color);
+          list-style-type: none;
+          font-size: 1.2rem;
+
+          &:hover {
+            color: var(--Theme-color);
+          }
+        }
+      }
+    }
+  }
+}
+
+body{
+  position: relative;
+}
+
+section.hero {
+  width: 100%;
+  margin: 7px 0 0 0;
+  height: calc(100vh);
+
+  /*HEREIUSEDCARASUALEFFECTFORBEAUTIFULHEROPAGE:;
+  */
+  animation: carousel 10s linear infinite alternate;
+  -webkit-animation: carousel 10s linear infinite alternate;
+}
+
+@keyframes carousel {
+  0% {
+    background: url("https://cdn.shopify.com/s/files/1/0081/7276/5246/files/52ed6da7bc351177cabe1deb6875b41c_1024x1024.webp?v=1730193313");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+  }
+  100% {
+    background: url("https://png.pngtree.com/thumb_back/fh260/background/20240411/pngtree-gaming-room-with-colorful-neon-image_15712824.jpg");
+
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+  }
+}
+
+//NOW PERFORMING THE INFINITE SCROLLING CARASUOAL:
+
+.carousal-container {
+  max-width: 1280px;
+  height: 60%;
+  overflow: hidden;
+  background-color: var(--Theme-color);
+  margin: 3rem auto;
+  border-radius: 2rem;
+  -webkit-border-radius: 2rem;
+  -moz-border-radius: 2rem;
+  -ms-border-radius: 2rem;
+  -o-border-radius: 2rem;
+
+  & .scroll-track-1 {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    animation: scroll-left 20s linear infinite;
+    -webkit-animation: scroll-left 20s linear infinite;
+
+    & .Card-Item {
+      // fixing height and width under the given div size:
+      height: 100px;
+      width: 200px;
+
+      margin: 2rem;
+      flex-shrink: 0;
+
+      & img {
+        height: 100%;
+        width: 100%;
+        border-radius: 1.2rem;
+        -webkit-border-radius: 1.2rem;
+        -moz-border-radius: 1.2rem;
+        -ms-border-radius: 1.2rem;
+        -o-border-radius: 1.2rem;
+      }
+    }
+
+    // IF WE WANT TO STOP THE ANIMATION ON HOVER, THEN WE APPLY TO SCROLL-TRACK:
+    &:hover {
+      animation-play-state: paused;
+      cursor: pointer;
+    }
+  }
+}
+
+//HERE I HAD DEFINED THE ANIMATION:
+//HERE WE NEED TO MOVE FORM LEFT TO RIGHT , MEANS 0 TO 100%, SO WE SIMPLY START WITH 0% TO NEGATIVE 100% .TO MOVE RIGHT.
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0%);
+    -webkit-transform: translateX(0%);
+    -moz-transform: translateX(0%);
+    -ms-transform: translateX(0%);
+    -o-transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+    -moz-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
+    -o-transform: translateX(-100%);
+  }
+}
+
+//Designing of product Banners:
+.Product-Banner{
+  width: 100%;
+  height: 300px;
+  background-image: url("https://storage-asset.msi.com/ca/picture/image/armoured-up-with-MSI/Powered_by_MSI_v1_KV.jpg");
+  background-repeat: no-repeat;
+  background-position: 100% 100%;
+  background-size: cover;
+  margin: 7.5rem 0;
+}
+
+// Creating a Product Card here:
+.Products {
+  & .container {
+    max-width: 1280px;
+    margin: 3rem auto;
+
+    & .ProductContainer {
+      max-width: 1280px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+
+      & .cards {
+        width: 300px;
+        height: 500px;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        border-radius: 1.9rem;
+        -webkit-border-radius: 1.9rem;
+        -moz-border-radius: 1.9rem;
+        -ms-border-radius: 1.9rem;
+        -o-border-radius: 1.9rem;
+
+        & .Imagecontainer {
+          margin: 1rem auto;
+          height: 200px;
+          padding: 1rem;
+          width: 290px;
+
+          & .ProductImage {
+            width: 100%;
+            height: 100%;
+            border-radius: 1.2rem;
+            -webkit-border-radius: 1.2rem;
+            -moz-border-radius: 1.2rem;
+            -ms-border-radius: 1.2rem;
+            -o-border-radius: 1.2rem;
+          }
+        }
+
+        & .Product-name {
+          font-size: 1.3rem;
+          font-family: sans-serif;
+          text-transform: capitalize;
+          padding: 1rem;
+          letter-spacing: 0.1rem;
+          color: #666;
+        }
+
+        & .Product-Price-Element {
+          font-family: sans-serif;
+          text-transform: capitalize;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 0.3rem 1rem;
+
+          & .Product-Price {
+            font-size: 1.2rem;
+            font-weight: 400;
+            color: #666;
+          }
+
+          & .Product-Actual-Price {
+            font-size: 1.2rem;
+            color: #666;
+            margin-right: 3rem;
+            text-decoration: line-through;
+            text-decoration-color: var(--Theme-color);
+            -moz-text-decoration-color: var(--Theme-color);
+          }
+        }
+
+        & .Product-Stock-Element {
+          display: flex;
+          gap: 1rem;
+          color: #666;
+          padding: 0.3rem 1rem;
+          font-size: 1.2rem;
+
+          & .Stock-value {
+            font-weight: 600;
+          }
+        }
+
+        & .Stock-Counter-Element {
+          padding: 0.3rem 1rem;
+          font-size: 1.2rem;
+          color: #666;
+
+          display: flex;
+          gap: 1rem;
+
+          & .stockcounter {
+            display: flex;
+            // border: 1px solid black;
+            gap: 1rem;
+            justify-content: center;
+            align-items: center;
+
+            & .Count-Value {
+              font-size: 1.1rem;
+              color: #666;
+              font-weight: 400;
+            }
+
+            & button {
+              padding: 0.4rem 0.6rem;
+              font-size: 1.2rem;
+              font-weight: 600;
+              background-color: #666;
+
+              &:hover {
+                background-color: var(--Theme-color);
+                color: #fff;
+              }
+
+              &:active {
+                background-color: var(--kaala-color);
+                color: #fff;
+              }
+            }
+          }
+        }
+
+        & .addToCart {
+          display: inline-block;
+          margin: 1.2rem 1rem;
+          border-radius: 1.3rem;
+          -webkit-border-radius: 1.3rem;
+          -moz-border-radius: 1.3rem;
+          -ms-border-radius: 1.3rem;
+          -o-border-radius: 1.3rem;
+          padding: 1rem;
+          width: 90%;
+          color: #666;
+          text-align: center;
+          font-weight: 500;
+
+          &:hover {
+            background-color: var(--Theme-color);
+            color: #fff;
+          }
+
+          &:active {
+            background-color: var(--kaala-color);
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+}
+
+//DESING AGAIN THE INFINITE SCROLLING CAROUSAL FOR TESTIMONIALS:
+.carousal-container-2 {
+  max-width: 1280px;
+  margin: 5rem auto;
+  // border: 1px solid black;
+  overflow: hidden;
+
+  & .scroll-track-2 {
+    margin: 2rem 0;
+    display: flex;
+    gap: 3rem;
+    animation: scroll-right 30s linear infinite;
+    -webkit-animation: scroll-right 30s linear infinite;
+
+    & .Test-Item {
+      width: 300px;
+      height: 530px;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      // border: 1px solid black;
+      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      border-radius: 1.2rem;
+      -webkit-border-radius: 1.2rem;
+      -moz-border-radius: 1.2rem;
+      -ms-border-radius: 1.2rem;
+      -o-border-radius: 1.2rem;
+
+      & .Test-Image {
+        margin: 1rem;
+        height: 300px;
+        width: 240px;
+
+        & img {
+          height: 100%;
+          width: 100%;
+          border-radius: 1.2rem;
+          -webkit-border-radius: 1.2rem;
+          -moz-border-radius: 1.2rem;
+          -ms-border-radius: 1.2rem;
+          -o-border-radius: 1.2rem;
+        }
+      }
+
+      & .Test-Name {
+        text-align: center;
+        font-size: 1.4rem;
+        color: var(--Theme-color);
+        padding: 1rem;
+        font-weight: 500;
+      }
+
+      & .Test-Para {
+        margin: 0 1.2rem;
+        color: #666;
+        text-transform: capitalize;
+        text-align: justify;
+      }
+    }
+
+    &:hover{
+      animation-play-state: paused;
+      cursor: pointer;
+    }
+  }
+}
+
+//NOTE:WE KNOW THAT O% IS OUR LEFT SIDE AND 100% IS AT RIGHT SIDE OF THE WIDTH, SO, IF WE WANT TO SCROLL THE ITEM FROM RIGHT TO LEFT, THEN WE NEED TO GIVE THE TRANSLATE X AT 0% WITH NEGATIVE SIGN, SO THAT IT COMES FROM RIGHT TO LEFT.,
+@keyframes scroll-right {
+  0% {
+    transform: translateX(-120%);
+    -webkit-transform: translateX(-120%);
+    -moz-transform: translateX(-120%);
+    -ms-transform: translateX(-120%);
+    -o-transform: translateX(-120%);
+  }
+  100% {
+    transform: translateX(0%);
+    -webkit-transform: translateX(0%);
+    -moz-transform: translateX(0%);
+    -ms-transform: translateX(0%);
+    -o-transform: translateX(0%);
+  }
+}
+
+//NOW DESIGNING FOOTER SECTION:
+.footer {
+  width: 100%;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  margin: 10rem 0 0 0;
+
+  & .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+
+    & .brand-logo {
+      width: 300px;
+      height: 100px;
+      margin: 0 0 0 2rem;
+
+      & img {
+        height: 100%;
+        width: 100%;
+      }
+    }
+
+    & .pages {
+      list-style-type: none;
+      line-height: 1.8;
+      margin-right: 2rem;
+
+      & a {
+        text-decoration: none;
+        font-size: 1.2rem;
+        font-family: sans-serif;
+        text-transform: uppercase;
+        color: #666;
+
+        &:hover {
+          color: var(--Theme-color);
+        }
+
+        &:active {
+          color: var(--kaala-color);
+        }
+      }
+    }
+
+    & .TermsCondition {
+      list-style-type: none;
+      line-height: 1.8;
+      margin-right: 2rem;
+
+      & a {
+        text-decoration: none;
+        font-size: 1.2rem;
+        font-family: sans-serif;
+        text-transform: uppercase;
+        color: #666;
+
+        &:hover {
+          color: var(--Theme-color);
+        }
+
+        &:active {
+          color: var(--kaala-color);
+        }
+      }
+    }
+  }
+
+  & .footer-copyright {
+    display: flex;
+    align-items: center;
+    padding: 1.5rem 0;
+
+    & .copy-right-text {
+      font-size: 1rem;
+      text-align: center;
+      flex-basis: 70%;
+      text-transform: uppercase;
+    }
+
+    & .social-links {
+      display: flex;
+      flex-basis: 30%;
+      gap: 1.4rem;
+      list-style-type: none;
+
+      & a {
+        color: #666;
+        font-size: 1rem;
+        text-transform: uppercase;
+        text-decoration: none;
+
+        &:hover {
+          color: var(--Theme-color);
+        }
+
+        &:active {
+          color: var(--kaala-color);
+        }
+      }
+    }
+  }
+}
+
+// DESIGN OF PRODUCT PAGES:
+.Sort_Search {
+  margin: 12rem 0 3rem 6rem;
+  display: flex;
+
+  & .searching {
+    margin: 2rem;
+    position: relative;
+    flex-basis: 80%;
+    justify-content: center;
+
+    & input {
+      padding: 1rem 4rem;
+      width: 30%;
+      font-family: sans-serif;
+      font-size: 1.2rem;
+      border-radius: 1.2rem;
+      font-size: 1.2rem;
+      -webkit-border-radius: 1.2rem;
+      -moz-border-radius: 1.2rem;
+      -ms-border-radius: 1.2rem;
+      -o-border-radius: 1.2rem;
+      color: #666;
+
+      &:focus {
+        outline: 0.1rem solid var(--Theme-color);
+      }
+    }
+
+    & i {
+      position: absolute;
+      top: 4px;
+      padding: 1rem;
+      font-size: 1.4rem;
+      left: 10px;
+      color: #666;
+    }
+  }
+
+  & .sort {
+    border: 1px solid black;
+    flex-basis: 10%;
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 3rem 0;
+    cursor: pointer;
+    padding: 1rem;
+    height: 50px;
+    border-radius: 1.2rem;
+    -webkit-border-radius: 1.2rem;
+    -moz-border-radius: 1.2rem;
+    -ms-border-radius: 1.2rem;
+    -o-border-radius: 1.2rem;
+    color: #666;
+
+    & p {
+      letter-spacing: 0.1rem;
+      font-size: 1.2rem;
+      font-family: sans-serif;
+    }
+  }
+}
+
+//DESIGN OF TOAST:
+.toast{
+  position: fixed;
+  text-transform: capitalize;
+  right: 2rem;
+  top: 7.5rem;
+  background-color:var(--Theme-color);
+  font-size: 1.5rem;
+  color: #fff;
+  padding: 1rem;
+  animation: scrolltoast 0.8s linear;
+  -webkit-animation: scrolltoast 0.8s linear;
+  border-radius: 1rem;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
+}
+
+@keyframes scrolltoast {
+  0%{      //here i need to make 0%, so that it will be offscreen right.
+    transform: translateX(0%);
+    -webkit-transform: translateX(0%);
+    -moz-transform: translateX(0%);
+    -ms-transform: translateX(0%);
+    -o-transform: translateX(0%);
+}
+20%{
+  //At20%,iwanttomakeitasvisible...
+  
+  transform: translateX(-10%);
+  -webkit-transform: translateX(-10%);
+  -moz-transform: translateX(-10%);
+  -ms-transform: translateX(-10%);
+  -o-transform: translateX(-10%);
+}
+80%{
+  //hereiwanttoSTAYatscreen.
+  
+  
+  transform: translateX(-10%);
+  -webkit-transform: translateX(-10%);
+  -moz-transform: translateX(-10%);
+  -ms-transform: translateX(-10%);
+  -o-transform: translateX(-10%);
+}
+  //exit right
+100%{
+  transform: translateX(30%);
+  -webkit-transform: translateX(30%);
+  -moz-transform: translateX(30%);
+  -ms-transform: translateX(30%);
+  -o-transform: translateX(30%);
+}
+}
+
+//Desigining of Contact Banner:
+.Contact-Banner{
+  width: 100%;
+  height: 300px;
+  background-image: url("https://www.marijuanaventure.com/wp-content/uploads/2020/09/contactus-banner.jpg");
+  background-position: 100% 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 7.5rem 0 0 0;
+}
+
+//NOW DESIGINING THE CONTACT PAGE:
+.Contact-form {
+
+  margin: 12rem auto;
+  max-width: 1280px;
+
+  & .contact-page {
+    margin: 7rem 0;
+    & .message-info {
+      display: flex;
+      gap: 1.5rem;
+
+      & .form-container {
+        box-shadow:
+          rgba(0, 0, 0, 0.25) 0px 54px 55px,
+          rgba(0, 0, 0, 0.12) 0px -12px 30px,
+          rgba(0, 0, 0, 0.12) 0px 4px 6px,
+          rgba(0, 0, 0, 0.17) 0px 12px 13px,
+          rgba(0, 0, 0, 0.09) 0px -3px 5px;
+        padding: 1rem 2rem;
+        flex-basis: 50%;
+
+        & h3 {
+          font-family: sans-serif;
+          font-size: 1.2rem;
+          text-transform: uppercase;
+          padding: 2rem 0rem;
+        }
+
+        & form {
+          // border: 1px solid red;
+
+          & div {
+            margin: 1rem 0;
+            width: 100%;
+
+            & input {
+              display: block;
+              width: 100%;
+
+              padding: 1rem;
+              margin: 0.3rem 0;
+              border-radius: 1rem;
+              -webkit-border-radius: 1rem;
+              -moz-border-radius: 1rem;
+              -ms-border-radius: 1rem;
+              -o-border-radius: 1rem;
+              color: #666;
+              font-size: 1.1rem;
+
+              &:focus-visible {
+                outline: 1px solid var(--Theme-color);
+              }
+            }
+
+            & textarea {
+              display: block;
+              width: 100%;
+              max-width: 610px;
+
+              padding: 1rem;
+              margin: 0.3rem 0;
+              border-radius: 1rem;
+              -webkit-border-radius: 1rem;
+              -moz-border-radius: 1rem;
+              -ms-border-radius: 1rem;
+              -o-border-radius: 1rem;
+              color: #666;
+              font-size: 1.1rem;
+
+              &:focus-visible {
+                outline: 1px solid var(--Theme-color);
+              }
+            }
+          }
+
+          & .send {
+            display: block;
+            text-align: center;
+            margin: 1rem 0;
+            color: #fff;
+            background-color: var(--Theme-color);
+            cursor: pointer;
+            padding: 1rem;
+            width: 100%;
+            font-family: sans-serif;
+            font-size: 1.1rem;
+            border-radius: 1.1rem;
+            -webkit-border-radius: 1.1rem;
+            -moz-border-radius: 1.1rem;
+            -ms-border-radius: 1.1rem;
+            -o-border-radius: 1.1rem;
+
+            &:hover {
+              background-color: #000;
+              color: #fff;
+            }
+
+            &:active {
+              background-color: var(--Theme-color);
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+
+    & .contact-info {
+      margin: 0 1rem;
+      & div {
+        & h3 {
+          font-size: 1.2rem;
+          font-family: sans-serif;
+          letter-spacing: 0.1rem;
+          text-transform: uppercase;
+          line-height: 2.9;
+        }
+        & p {
+          font-size: 0.9rem;
+          font-family: sans-serif;
+          letter-spacing: 0.1rem;
+          color: #666;
+        }
+      }
+
+      & .callus {
+        margin-top: 0.8rem;
+        padding: 1rem;
+
+        & a {
+          text-decoration: none;
+          letter-spacing: 0.1rem;
+          font-family: sans-serif;
+          font-size: 1rem;
+          color: #666;
+        }
+
+        &:hover {
+          background-color: rgba(0, 0, 255, 0.4);
+          box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+          border-radius: 1.2rem;
+          -webkit-border-radius: 1.2rem;
+          -moz-border-radius: 1.2rem;
+          -ms-border-radius: 1.2rem;
+          -o-border-radius: 1.2rem;
+        }
+      }
+
+      & .mailus {
+        margin-top: 0.8rem;
+        padding: 1rem;
+
+        & a {
+          text-decoration: none;
+          letter-spacing: 0.1rem;
+          font-family: sans-serif;
+          font-size: 1rem;
+          color: #666;
+        }
+
+        &:hover {
+          background-color: rgba(0, 0, 255, 0.4);
+          box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+          border-radius: 1.2rem;
+          -webkit-border-radius: 1.2rem;
+          -moz-border-radius: 1.2rem;
+          -ms-border-radius: 1.2rem;
+          -o-border-radius: 1.2rem;
+        }
+      }
+
+      & .visitus {
+        margin-top: 0.8rem;
+        padding: 1rem;
+
+        & a {
+          text-decoration: none;
+          letter-spacing: 0.1rem;
+          font-family: sans-serif;
+          font-size: 1rem;
+          color: #666;
+        }
+
+        &:hover {
+          background-color: rgba(0, 0, 255, 0.4);
+          box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+          border-radius: 1.2rem;
+          -webkit-border-radius: 1.2rem;
+          -moz-border-radius: 1.2rem;
+          -ms-border-radius: 1.2rem;
+          -o-border-radius: 1.2rem;
+        }
+      }
+
+      & .timing {
+        margin-top: 0.8rem;
+        padding: 1rem;
+
+        & a {
+          text-decoration: none;
+          letter-spacing: 0.1rem;
+          font-family: sans-serif;
+          font-size: 1rem;
+          color: #666;
+        }
+
+        &:hover {
+          background-color: rgba(0, 0, 255, 0.4);
+          box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+          border-radius: 1.2rem;
+          -webkit-border-radius: 1.2rem;
+          -moz-border-radius: 1.2rem;
+          -ms-border-radius: 1.2rem;
+          -o-border-radius: 1.2rem;
+        }
+      }
+
+      & .location {
+        margin: 1rem 0;
+        width: 100%;
+        height: 200px;
+
+        & iframe {
+          width: 100%;
+          height: 100%;
+          border-radius: 1.2rem;
+          -webkit-border-radius: 1.2rem;
+          -moz-border-radius: 1.2rem;
+          -ms-border-radius: 1.2rem;
+          -o-border-radius: 1.2rem;
+        }
+      }
+    }
+  }
+}
+
+// DESIGN OF FREQUENTLY ASKED QUESTION:
+.FAQ {
+  margin: 3rem 0;
+  padding: 1rem;
+  background-color: var(--Theme-color);
+  border-radius: 1.2rem;
+
+  .common-head {
+    padding: 2rem 0;
+    color: #fff;
+    font-family: sans-serif;
+    letter-spacing: 0.1rem;
+  }
+
+  .Faq-Container {
+    background-color: #fff;
+    margin: 3rem 1rem;
+    padding: 1rem;
+    cursor: pointer;
+
+    .question {
+      display: flex;
+      justify-content: space-between;
+      cursor: pointer;
+      font-family: sans-serif;
+      font-size: 1.2rem;
+      text-transform: capitalize;
+
+      .icon {
+        transition: 0.2s linear;
+
+        &.active {
+          transform: rotate(180deg);
+        }
+      }
+    }
+
+    .answer {
+      margin-top: 1rem;
+      font-family: sans-serif;
+      font-size: 1rem;
+      color: #666;
+      line-height: 1.5;
+
+      max-height: 0;
+      overflow: hidden;
+      transition: 0.3s ease;
+
+      &.active {
+        max-height: 200px;
+      }
+    }
+  }
+}
+
+// DESING A ADD TO CART PAGES :
+.CartContainerDetails {
+  margin: 10rem 0;
+
+  & .ContainerCard {
+    & article {
+      margin: 2rem 0;
+      padding: 1rem 0.5rem;
+      display: flex;
+      justify-content: space-between;
+      box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+      gap: 2rem;
+      border-radius: 1.2rem;
+      -webkit-border-radius: 1.2rem;
+      -moz-border-radius: 1.2rem;
+      -ms-border-radius: 1.2rem;
+      -o-border-radius: 1.2rem;
+
+      &:hover {
+        background-color: rgba(0, 0, 255, 0.4);
+        cursor: pointer;
+      }
+
+      & .CartImg {
+        height: 150px;
+        width: 150px;
+
+        & img {
+          height: 100%;
+          width: 100%;
+        }
+      }
+
+      & .CartName {
+        font-family: sans-serif;
+        letter-spacing: 0.1rem;
+        text-transform: capitalize;
+        color: #666;
+        font-size: 1.2rem;
+        margin: auto 0;
+      }
+
+      & .CartPrice {
+        margin: auto 0;
+
+        & .CartItemPrice {
+          font-family: sans-serif;
+          letter-spacing: 0.1rem;
+          text-transform: capitalize;
+          color: #666;
+          font-size: 1.2rem;
+        }
+      }
+
+      & .CartItemCounter {
+        margin: auto 0;
+        display: flex;
+        gap: 0.2rem;
+
+        & .CartDecrement,
+        .CartQuantity,
+        .CartIncrement {
+          font-family: sans-serif;
+          letter-spacing: 0.1rem;
+          text-transform: capitalize;
+          color: #666;
+          font-size: 1.2rem;
+          padding: 0.1rem;
+        }
+      }
+
+      & .remove-to-cart {
+        margin: auto 0;
+        font-family: sans-serif;
+        letter-spacing: 0.1rem;
+        text-transform: capitalize;
+        color: #fff;
+        font-size: 1.2rem;
+        margin-right: 1rem;
+        padding: 0.5rem;
+        border-radius: 1.2rem;
+        -webkit-border-radius: 1.2rem;
+        -moz-border-radius: 1.2rem;
+        -ms-border-radius: 1.2rem;
+        -o-border-radius: 1.2rem;
+        cursor: pointer;
+        background-color: var(--Theme-color);
+      }
+    }
+  }
+}
+
+.summaryCart {
+  box-shadow:
+    rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+    rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  padding: 1rem;
+  border-radius: 1.2rem;
+  -webkit-border-radius: 1.2rem;
+  -moz-border-radius: 1.2rem;
+  -ms-border-radius: 1.2rem;
+  -o-border-radius: 1.2rem;
+
+  & .Sub-Total {
+    display: flex;
+    gap: 0.5rem;
+    font-size: 1.1rem;
+    margin: 1rem 0;
+    font-family: sans-serif;
+    color: #666;
+  }
+
+  & .Tax {
+    margin: 1rem 0;
+    align-items: center;
+    display: flex;
+    gap: 0.5rem;
+    font-size: 1.1rem;
+    font-family: sans-serif;
+    color: #666;
+  }
+
+  & .Final-Total {
+    display: flex;
+    margin: 1rem 0;
+    gap: 0.5rem;
+    font-size: 1.1rem;
+    font-family: sans-serif;
+    color: #666;
+  }
+}
+
+.pay{
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  background-color: var(--Theme-color);
+  font-family: sans-serif;
+  font-size: 1.2rem;
+  width: max-content;
+  padding: 1rem 5rem;
+  margin: 5rem auto 0;
+  border-radius: 1rem;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
+
+  & i{
+    font-size: 1.2rem;
+
+  }
+  
+  & a{
+    color: white;
+    text-decoration: none;
+  }
+
+    &:hover{
+      background-color: #000;
+      color: #fff;
+    }
+}
+
+// DESIGING OF SCROLBAR FOR THE UI OF WEBSITE:
+
+::-webkit-scrollbar {
+  width: 0.6rem; //used to desribe the width of the scrollbar
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1; // defines track color
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 255, 0.4);
+  //it define the pointer
+  border-radius: 1.2rem;
+  -webkit-border-radius: 1.2rem;
+  -moz-border-radius: 1.2rem;
+  -ms-border-radius: 1.2rem;
+  -o-border-radius: 1.2rem;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--Theme-color); /* on hover */
+}

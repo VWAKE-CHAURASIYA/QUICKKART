@@ -1,0 +1,355 @@
+/* NOTE: I HAVE ALREADY DESIGNED TEH WEBSITE FOR THE DEKSTOP SCREEN SIZE, TAKING MAX-WIDTH OF 1280PX, NOW I NEED TO DESIGN FOR MOBILE AND TABLET SCREEN SIZE DEVICES.
+THE THINGS TO REMEMBER IS LIKE, IF WE ALREADY GIVE A MAX-WIDTH, WE DONT NEED TO WRITE AGIAN FOR DIFFERNET DEVICES, AS MAX-WIDTH HAS CAPABILITY TO SHRINK ACCORDING TO THE SCREEN SIZED, SO WHIEL DESIGING FOR THE MOBILE AND TABLET SIZE, WE NEED TO CHANGE ONV FEW THINGS, NOT MORE THAN THAT..  */
+
+/* THIS PAGE IS ONLY CREATED TO MAKE A RESPONSIVE WEBPAGES:  */
+
+/* MOBILE APPROACH:  */
+/* ✅ Mobile
+0px – 480px → small phones
+481px – 767px → large phones */
+
+@media (min-width: 50px) and (max-width: 720px) {
+
+    header {
+        height: 90px;
+    }
+
+header .container .navbar1 .navlist {
+    display: none;
+}
+
+header .container .navbar1 .bar {
+    top: 2rem;
+    right: 2rem;
+    display: block; 
+}
+
+
+  header .container .navbar2 .navlist a {
+    position: absolute;
+    top: 2.1rem;
+    right: 6rem;
+  }
+
+     header .container .logo {
+        flex-basis: 100%;
+        height: 95%;
+        width: 100%;
+        margin: 1rem 0;
+    }
+
+  header .container .logo img {
+    width: 100%;
+    height: 100%;
+  }
+
+  section.hero {
+    height: calc(100vh - 60px );
+}
+
+ .common-head {
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1.5;
+    margin: 3rem 0 1.7rem 0 ;
+}
+
+.common-subhead {
+    margin: 0.4rem auto;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.carousal-container {
+  margin: 3rem 1rem;
+}
+
+.carousal-container .scroll-track-1 
+{
+  animation: 10s linear infinite scroll-left;
+  -webkit-animation: 10s linear infinite scroll-left;
+}
+
+.carousal-container .scroll-track-1 .Card-Item {
+  width: 100px;
+  height: 50px;
+  margin: 1rem;
+}
+
+.carousal-container .scroll-track-1 .Card-Item img {
+  width: 100%;
+  height: 100%;
+}
+
+.Products .container .ProductContainer {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+}
+
+.Products .container .ProductContainer .cards {
+    margin: 0 auto;
+    height: fit-content;
+}
+
+
+.Products .container .ProductContainer .cards .Product-name {
+   text-align: center;
+    font-size: 1.5rem;
+}
+
+.Products .container .ProductContainer .cards .Product-Price-Element {
+gap: 1rem;
+}
+
+.Products .container .ProductContainer .cards .Product-Stock-Element {
+    font-size: 1.1rem;  
+}
+
+.Products .container .ProductContainer .cards .Stock-Counter-Element {
+    font-size: 1.1rem;
+   
+}
+
+
+.Products .container .ProductContainer .cards .Stock-Counter-Element .stockcounter {
+   
+    gap: 0.5rem;  
+}
+
+
+.carousal-container-2 {
+    margin: 2rem 1rem;
+}
+
+.carousal-container-2 .scroll-track-2{
+    animation: scroll-right 10s linear infinite;
+    -webkit-animation: scroll-right 10s linear infinite;
+}
+
+.footer .footer-content {
+    justify-content: start;
+    align-items: start;
+    padding: 1rem;
+    display: flex;
+    gap: 2rem;
+    flex-direction: column;
+}
+
+.footer .footer-content .brand-logo {
+    width: 300px;
+    height: 100px;
+    margin: 0 auto;
+}
+
+.footer .footer-content .brand-logo img {
+    width: 100%;
+    height: 100%;
+}
+
+.footer .footer-copyright {
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem 0 0 0;
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+}
+
+.footer .footer-copyright .copy-right-text {
+    text-align: center;
+    font-size: 0.9rem;
+    margin: 0 auto;
+}
+
+.footer .footer-copyright .social-links {
+    gap: 1rem;
+}
+
+.footer .footer-copyright .social-links a {
+    font-size: 0.8rem;
+}
+
+
+.footer .footer-content .pages a {
+    font-size: 1.1rem;
+}
+
+.footer .footer-content .TermsCondition a {
+    font-size: 1.1rem;  
+}
+
+/* PRODUCT PAGE:  */
+
+.Product-Banner {
+ display: none;
+}
+
+.Products .common-head {
+    margin: 10rem 0 0 0;
+}
+
+/* CONTACT PAGE:  */
+.Contact-Banner {
+   display: none;
+}
+
+.Contact-form .contact-page .message-info {
+    gap: 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.Contact-form .contact-page .message-info .form-container {
+ margin: 0 auto 1rem;
+}
+
+.FAQ {
+    margin: 2rem auto;
+}
+
+.FAQ .common-head {
+    padding: 0.8rem 0;
+    font-size: 1.3rem;
+    font-family: sans-serif;
+}
+
+.FAQ .Faq-Container .question {
+    font-size: 1rem;
+}
+
+.FAQ .Faq-Container .answer {
+   font-size: 1rem;
+}
+
+.Contact-form .contact-page .contact-info .location {
+    width: 100%;
+    height: 200px;
+    margin: 3rem 0 0 0;
+}
+
+/* DESING OF ADD TO CART PAGES:*/
+.CartContainerDetails .ContainerCard article {
+    gap: 1rem;
+    margin: 1.5rem auto;
+    padding: 2rem 0.5rem;
+}
+
+.CartContainerDetails .ContainerCard article .CartImg {
+    width: 100px;
+    height: 50px;
+}
+
+.CartContainerDetails .ContainerCard article .CartName {
+    font-size: 0.9rem;
+}
+
+.CartContainerDetails .ContainerCard article .CartPrice .CartItemPrice {
+    font-size: 0.7rem;
+    letter-spacing: 0rem;
+}
+
+.CartContainerDetails .ContainerCard article .CartItemCounter {
+    gap: .1rem;
+}
+
+.CartContainerDetails .ContainerCard article .CartItemCounter .CartQuantity, .CartContainerDetails .ContainerCard article .CartItemCounter .CartIncrement {
+    font-size: 0.8rem;
+}
+
+.CartContainerDetails .ContainerCard article .remove-to-cart {
+    font-size: 0.6rem;
+}
+
+.pay {
+    font-size: 0.9rem;
+    box-shadow: 0 5px 15px #00000059;
+}
+
+/* DESING OF TOAST:  */
+.toast{
+  top: 6rem;
+  right: 1rem;
+  font-size: 0.8rem;
+}
+
+}
+
+/* ✅ Tablet
+768px – 1024px */
+
+@media (min-width: 720px) and (max-width: 1024px) { 
+    header .container .logo {
+    flex-basis: 50%;
+}
+
+.carousal-container {
+    margin: 3rem 1.5rem;
+}
+
+.carousal-container .scroll-track-1 .Card-Item {
+    width: 160px;
+    height: 75px;
+    margin: 1.6rem;
+}
+
+.Products .container .ProductContainer {
+    grid-template-columns: repeat(2, 1fr);
+    margin: 0 1.5rem;
+    gap: 5rem;
+
+}
+
+.Products .container .ProductContainer .cards {
+  justify-self: center;
+}
+
+.carousal-container-2 {
+    margin: 5rem 1.5rem;
+}
+
+.footer .footer-content {
+    justify-content: start;
+    align-items: start;
+    gap: 3rem;
+    padding: 2rem;
+    margin: 0 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer .footer-content .brand-logo {
+    width: 400px;
+    height: 130px;
+    margin: 0 auto;
+}
+
+.footer .footer-copyright {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.Contact-form .contact-page .message-info {
+    margin: 0 1.5rem;
+}
+
+.FAQ {
+    margin: 3rem 1.5rem;
+}
+
+.Contact-form .contact-page .message-info .form-container {
+    flex-basis: 150%;
+}
+
+    .CartContainerDetails .ContainerCard article {
+        margin: 1.5rem auto;
+    }
+
+}
+
+
+/* ✅ Laptop / Small Desktop
+1025px – 1280px  {All ready designed} */
+
+/* ✅ Large Desktop
+1281px and above */

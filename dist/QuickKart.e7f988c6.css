@@ -1,0 +1,82 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  background-color: red;
+  max-width: 1280px;
+  margin: auto;
+}
+
+:root {
+  --Theme-color: #332a99;
+}
+
+header {
+  width: 100%;
+  height: 100px;
+  box-shadow: 0 5px 15px #00000059;
+
+  & .container {
+    justify-content: space-between;
+    margin: 1rem;
+    display: flex;
+
+    & .logo {
+      & img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    & .navlist {
+      gap: 2rem;
+      display: flex;
+
+      & li {
+        list-style-type: none;
+
+        & a {
+          cursor: pointer;
+          color: #000;
+          align-self: center;
+          font-size: 22px;
+          line-height: 6;
+          text-decoration: none;
+
+          &:hover {
+            color: var(--Theme-color);
+          }
+        }
+      }
+    }
+  }
+}
+
+section.hero {
+  animation: 10s linear infinite carasual;
+  width: 100%;
+  height: 100vh;
+  -webkit-animation: 10s ease-out infinite carousel;
+}
+
+@keyframes carousel {
+  0% {
+    background: url("https://t4.ftcdn.net/jpg/05/71/19/05/360_F_571190572_EyjlzUbpoUpfbOVsi1gT7njTBELh5TL2.jpg") 0 0 / 100% 100% no-repeat;
+  }
+
+  25% {
+    background: url("https://png.pngtree.com/thumb_back/fh260/background/20240411/pngtree-gaming-room-with-colorful-neon-image_15712824.jpg") 0 0 / 100% 100% no-repeat;
+  }
+
+  50% {
+    background: url("https://www.greatbeanbags.com/media/wysiwyg/blog/essential-gaming-setup-ideas-greatbeanbags-blog-6.jpg") 0 0 / 100% 100% no-repeat;
+  }
+
+  100% {
+    background: url("https://www.leetdesk.com/_next/image?url=https%3A%2F%2Fimages.prismic.io%2Fleetdesk%2F37888785-fa43-4243-ae48-2a9ca2f35ff0_atmosphaerisches-gamer-zimmer.jpg%3Fauto%3Dcompress%2Cformat&w=3840&q=75") 0 0 / 100% 100% no-repeat;
+  }
+}
+/*# sourceMappingURL=QuickKart.e7f988c6.css.map */

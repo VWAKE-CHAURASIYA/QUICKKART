@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" href="./Public/images/Quickkart_Logo.png">
+
+    <link rel="stylesheet" href="Css/style.scss">
+    <link rel="stylesheet" href="Css/media.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Quickkart</title>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="#"><img src="./public/images/Quickkart_Logo.png" alt="logo"></a>
+            </div>
+            <nav class="navbar1">
+                <ul class="navlist">
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./Product.html">Product</a></li>
+                    <li><a href="./Contact.html">Contact</a></li>
+                </ul>
+                <span class="bar" onclick="ShowMenu()">   
+                <i class="fa-solid fa-bars"></i></span>
+            </nav>
+            <nav class="navbar2">
+                <ul class="navlist">
+                    <li><a href="./addToCart.htm" class="updateCartNumber"><i
+                                class="fa-solid fa-cart-arrow-down">0</i></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
+    <section class="Contact-Banner"></section>
+
+
+    <section class="Contact-form">
+
+        <div class="contact-Heading">
+            <div class="common-head">Contact Information</div>
+            <div class="common-subhead">“We’d love to hear from you”</div>
+        </div>
+
+        <section class="contact-page">
+            <div class="message-info">
+                <div class="form-container">
+                    <h3>Send us a message...</h3>
+                    <form action="https://formspree.io/f/mvzdyyrk" method="post">
+
+                        <div class="name">
+                            <label for="name">
+                            </label>Full Name*
+                            <input type="text" placeholder="John Doe..."
+                            name="name" required
+                            autocomplete="off">
+                        </div>
+
+                          <div class="mail">
+                            <label for="mail">
+                            </label>Email Address*
+                            <input type="mail" placeholder="abc@gmail.com" 
+                            name="mail" autocomplete="off">
+                        </div>
+
+
+                          <div class="subject">
+                            <label for="subject">
+                            </label>Subject*
+                            <input type="text" placeholder="How Can We Help....?" 
+                            name="subject"
+                            autocomplete="off">
+                        </div>
+
+
+                          <div class="message">
+                            <label for="message">
+                            </label>Message*
+
+                            <textarea placeholder="Write your message here..." required
+                            name="message"
+                            autocomplete="">
+                        </textarea>
+
+                    <button class="send" type="submit"><i class="fa-solid fa-paper-plane"></i> Send Message</button>
+                    </form>
+                </div>
+            </div>
+
+
+            <div class="contact-info">
+              <div>
+                <h3>Contact Information</h3>
+                <p>We're here to help and answer any questions you might have. We look forward to hearing from you.</p>
+              </div>
+
+              <div class="callus">
+              <h4 class="head"><i class="fa-solid fa-phone"></i>  Call Us</h4>
+              <a href="tel:+916063778998">+91 6063778998</a>
+              </div>
+
+              <div class="mailus">
+                <h4 class="head">
+                    <i class="fa-solid fa-envelope"></i>
+                    Mail Us
+                </h4>
+                <a href="mailto:Support@QuickKart.com">Support@QuickKart.com</a>
+              </div>
+
+              <div class="visitus">
+                <h4 class="head">
+                    <i class="fa-solid fa-location-dot"></i>
+                    Visit Us
+                </h4>
+                <a href="https://maps.app.goo.gl/h7e6X6gmyafAzWWN7"> View On Map</a>
+              </div>
+
+              <div class="timing">
+                <h4 class="head">
+                    <i class="fa-solid fa-clock"></i>
+                     Working Hours
+                </h4>
+                <p>Monday-Thursday: 9:30AM - 4:30PM</p>
+              </div>
+
+              <div class="location">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1667.062963467323!2d77.49328666742753!3d28.458965814264936!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cc1ddb386c709%3A0x20c57f23395ad828!2sGNIT%20College%20of%20Pharmacy!5e1!3m2!1sen!2sin!4v1777227546834!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>  
+              </div>
+            </div>
+        </section>
+
+
+        <div class="FAQ">
+            <div class="common-head">Frequently Asked Question</div>
+
+            <div class="Faq-Container">
+                <div class="question">
+                    <h3>What payment methods does QuickKart accept?</h3>
+                    <i class="icon  fa-solid fa-angle-down"></i>
+                </div>
+                <div class="answer ">
+                    <p>QuickKart offers a variety of secure and convenient payment methods to provide a seamless shopping experience. Customers can pay using credit and debit cards such as Visa and Mastercard for quick transactions. The platform also supports UPI (Unified Payments Interface), enabling instant payments through apps like Google Pay, PhonePe, and Paytm. Users can choose net banking to directly transfer money from their bank accounts.
+
+Additionally, QuickKart accepts digital wallets for faster checkout. For users who prefer offline options, Cash on Delivery (COD) is available. In some cases, Buy Now, Pay Later (BNPL) and EMI options are also provided for flexible payments.</p>
+                </div>
+            </div>
+
+            <div class="Faq-Container">
+                <div class="question">
+                    <h3>How long does delivery take?</h3>
+                    <i class="icon  fa-solid fa-angle-down"></i>
+                </div>
+                <div class="answer ">
+                    <p>QuickKart usually delivers orders within 3 to 7 business days across India after the product is successfully processed and shipped. The exact delivery time may vary depending on the customer’s location, availability of the product, and courier service speed. In metro cities, delivery is often faster, while remote or rural areas may take slightly longer. After placing an order, customers receive a tracking link so they can monitor their shipment in real time. QuickKart aims to ensure fast, safe, and reliable delivery so that customers receive their products in good condition and within the estimated timeframe.</p>
+                </div>
+            </div>
+
+
+            <div class="Faq-Container">
+                <div class="question">
+                    <h3>Can I return or exchange a product?</h3>
+                    <i class="icon  fa-solid fa-angle-down"></i>
+                </div>
+                <div class="answer ">
+                    <p>Yes, QuickKart allows customers to return or exchange products if they are not satisfied with their purchase. Returns or exchanges are accepted within a specified time period, usually 7 to 10 days after delivery, depending on the product category. The product must be in its original condition, unused, and with all packaging and tags intact. Once the return request is approved, a pickup is arranged from the customer’s address. After the product is received and verified, a refund or replacement is processed as per the customer’s choice. QuickKart aims to ensure a hassle-free and customer-friendly return and exchange policy.</p>
+                </div>
+            </div>
+
+
+            <div class="Faq-Container">
+                <div class="question">
+                    <h3>How can I track my order?</h3>
+                    <i class="icon  fa-solid fa-angle-down"></i>
+                </div>
+                <div class="answer ">
+                    <p>How can I track my order?
+
+Customers can easily track their orders on QuickKart using the order tracking feature. After placing an order, a confirmation message and tracking ID are sent to the registered email or mobile number. By logging into the QuickKart account and visiting the “My Orders” section, users can view real-time updates of their shipment status. Alternatively, the tracking ID can be entered on the courier partner’s tracking page to check delivery progress. Updates include order confirmation, dispatch, in-transit status, and expected delivery date. This helps customers stay informed about their order until it is safely delivered to their address.</p>
+                </div>
+            </div>
+
+
+            <div class="Faq-Container">
+                <div class="question">
+                    <h3>Who is the Founder and CEO of Quickkart?</h3>
+                    <i class="icon  fa-solid fa-angle-down"></i>
+                </div>
+                <div class="answer ">
+                    <p>Vivek Chaurasiya is the Founder and Chief Executive Officer of QuickKart, an online e-commerce business focused on modern and branded luxury technical products such as high-performance PCs, luxury monitors, and gaming chairs.
+
+He originally belongs to Phulwariya, Varanasi, where he completed his schooling from Divine Sainik School,Lahartara,  Varanasi. After school, he moved to New Delhi to pursue a Bachelor of Technology in Computer Science and Engineering at Guru Gobind Singh Indraprastha University.
+
+During his academic journey, he has actively participated in various technical and inter-university competitions organized by the university and achieved notable success.
+
+He is skilled in full-stack development, working across frontend and backend systems, with a focus on performance optimization and user experience. He is also passionate about integrating Artificial Intelligence into projects, including building intelligent agents to solve complex problems. His vision is to create innovative startups based on machine learning and AI technologies.
+</p>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="brand-logo">
+                <img src="./Public/images/Quickkart_Logo.png" alt="">
+            </div>
+            <div class="pages">
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./Product.html">Product</a></li>
+                <li><a href="./Contact.html">Contact</a></li>
+                <li><a href="./addToCart.htm">My Cart</a></li>
+            </div>
+            <div class="TermsCondition">
+                <li><a href="#">Terms & Condtions</a></li>
+                <li><a href="#">Cookie Policy</a></li>
+                <li><a href="#">Accessibility</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+            </div>
+        </div>
+        <hr />
+        <div class="footer-copyright">
+            <div class="copy-right-text">&copy; 2026 QuickKart - VIVEK CHAURASIYA PROJECT. ALL RIGHT RESERVED</div>
+            <div class="social-links">
+                <li><a href="#"><i class="fa-brands fa-facebook"></i>Facebook</a></li>
+                <li><a href="#"><i class="fa-brands fa-instagram"></i>Instagram</a></li>
+                <li><a href="#"><i class="fa-brands fa-square-x-twitter"></i>X</a></li>
+                <li><a href="#"><i class="fa-brands fa-discord"></i> Discord</a></li>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="./src/FAQ.js" type="module"></script>
+</body>
+
+</html>

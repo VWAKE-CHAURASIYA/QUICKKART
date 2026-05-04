@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Css/style.scss">
+    <link rel="stylesheet" href="Css/media.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Add To Cart Page</title>
+</head>
+
+<body>
+     <header>
+        <div class="container">
+            <div class="logo">
+                <a href="#"><img src="./public/images/Quickkart_Logo.png" alt="logo"></a>
+            </div>
+            <nav class="navbar1">
+                <ul class="navlist">
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./Product.html">Product</a></li>
+                    <li><a href="./Contact.html">Contact</a></li>
+                </ul>
+                <span class="bar" onclick="ShowMenu()">   
+                <i class="fa-solid fa-bars"></i></span>
+            </nav>
+            <nav class="navbar2">
+                <ul class="navlist">
+                    <li><a href="./addToCart.htm" class="updateCartNumber"><i
+                                class="fa-solid fa-cart-arrow-down">0</i></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="CartContainerDetails">
+        <div class="common-head">Your Cart is here....</div>
+        <div class="container">
+            <div id="ContainerDetails"></div>
+        </div>
+    </section>
+
+
+    <section class="CartContainerSummary">
+        <div class="container">
+            <div class="summaryCart">
+                <div class="common-head">Selected Offer Summary</div>
+                <div class="Sub-Total">
+                    <p>Sub-Total - </p>
+                    <p class="subTotal">0</p>
+                </div>
+
+                <div class="Tax">
+                    <p>Tax - </p>
+                    <p class="Tax">50</p>
+                </div>
+                <hr>
+                <div class="Final-Total">
+                    <p>Final Total - </p>
+                    <p class="finalTotal"></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HERE I NEED TO DESIGN AGAIN THE TEMPLATE TAG, TO DEFINE THE REQUIRED THINGS FOR THE ITEMS ON ADD TO CART PAGE -->
+
+    <template id="CartContainerTemplate">
+        <div class="ContainerCard" id="ContainerCardValue">
+            <article class="Cartinformation [card]">
+                <div class="CartImg">
+                    <img data-src="" alt="CartProductImage">
+                </div>
+                <div class="CartName">
+                    <p class="CartItemName"></p>
+                </div>
+                <div class="CartPrice">
+                    <p class="CartItemPrice"></p>
+                </div>
+                <div class="CartItemCounter">
+                    <button class="CartDecrement">-</button>
+                    <p class="CartQuantity">1</p>
+                    <button class="CartIncrement">+</button>
+                </div>
+
+                <button class="add-to-cart remove-to-cart">
+                    Remove</button>
+            </article>
+        </div>
+    </template>
+
+    <section class="pay">
+        <a href="#"><i class="fa-brands fa-amazon-pay"></i> Proceed to Pay</a>
+    </section>
+
+   <footer class="footer">
+        <div class="footer-content">
+            <div class="brand-logo">
+                <img src="./Public/images/Quickkart_Logo.png" alt="">
+            </div>
+            <div class="pages">
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./Product.html">Product</a></li>
+                <li><a href="./Contact.html">Contact</a></li>
+                <li><a href="./addToCart.htm">My Cart</a></li>
+            </div>
+            <div class="TermsCondition">
+                <li><a href="#">Terms & Condtions</a></li>
+                <li><a href="#">Cookie Policy</a></li>
+                <li><a href="#">Accessibility</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+            </div>
+        </div>
+        <hr />
+        <div class="footer-copyright">
+            <div class="copy-right-text">&copy; 2026 QuickKart - VIVEK CHAURASIYA PROJECT. ALL RIGHT RESERVED</div>
+            <div class="social-links">
+                <li><a href="#"><i class="fa-brands fa-facebook"></i>Facebook</a></li>
+                <li><a href="#"><i class="fa-brands fa-instagram"></i>Instagram</a></li>
+                <li><a href="#"><i class="fa-brands fa-square-x-twitter"></i>X</a></li>
+                <li><a href="#"><i class="fa-brands fa-discord"></i> Discord</a></li>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="./src/showAddToCart.ts"></script>
+</body>
+
+</html>
