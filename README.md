@@ -31,7 +31,7 @@ To further enhance the visual experience, an infinite scrolling animation is inc
 Finally, the website includes a well-structured footer section that provides essential information such as brand identity, social media links, quick navigation links, and copyright details. The footer is designed to be clean, informative, and aligned with the overall user interface of the website.
 
 Product Section
-Product Section
+First we Create DisplayProduct.ts, which contains the functionality to display the product on webpages.
 
 The Product Section is designed using a data-driven and modular approach to ensure scalability and maintainability.
 
@@ -63,4 +63,30 @@ While working with TypeScript and Parcel, a specific consideration is made for h
 
 An important implementation detail is the dynamic assignment of IDs within cloned elements. By first selecting an element inside the template and then updating its ID using string literals, each card becomes uniquely identifiable. This technique enables efficient access to internal elements of each card for further interactions.
 
-Overall, this section demonstrates efficient use of templates, dynamic DOM manipulation, modular data handling, and TypeScript-based development practices to build a scalable and interactive product listing system.
+Overall, this section demonstrates efficient use of templates, dynamic DOM manipulation, modular data handling, and TypeScript-based development practices to build a scalable and interactive product listing system.Product Counter Page
+
+To implement the product counter functionality, the first step is to reference the parent container (e.g., stockContainer) within the product clone. This container includes the increment button, decrement button, and the quantity display element.
+
+After attaching the necessary event listeners, define a function named productCounterPage, which accepts parameters such as id, stockValue, and event.
+
+Once the required inputs are available, the next step is to identify the specific product card being interacted with. This is achieved by assigning a unique dynamic ID to each product card during the cloning process using setAttribute. When a user interacts with a card, this ID helps determine the currentCard, i.e., the exact product card that triggered the event.
+
+After identifying the current card, its internal elements—such as price, stock value, and the increment/decrement controls—can be accessed. The counter logic primarily relies on the increment and decrement buttons.
+
+By default, the product quantity is displayed as 1. To make this dynamic, we retrieve the current quantity using a custom attribute (e.g., total-quantity). If no value is set, it defaults to 1.
+
+Example:
+
+let productQuantity = currentCard?.querySelector('.Count-Value'); let quantity = parseInt(productQuantity?.getAttribute("total-quantity") || '1');
+
+Counter Logic Increment شرط (Condition): If the current quantity is less than the available stock (stockValue), increment the quantity. If it reaches the stock limit, restrict it to the maximum stock value. Decrement شرط (Condition): If the quantity is greater than 1, allow decrementing. This ensures the quantity never drops below the minimum allowed value.
+
+After applying the appropriate operation, update the quantity dynamically on the UI.
+
+Updating the Value
+
+The updated quantity should be reflected both visually and in the element’s attribute:
+
+productQuantity.innerText = quantity; productQuantity?.setAttribute("total-quantity", String(quantity));
+
+Finally, return the updated quantity value if needed for further processing.
