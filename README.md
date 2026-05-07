@@ -63,8 +63,9 @@ While working with TypeScript and Parcel, a specific consideration is made for h
 
 An important implementation detail is the dynamic assignment of IDs within cloned elements. By first selecting an element inside the template and then updating its ID using string literals, each card becomes uniquely identifiable. This technique enables efficient access to internal elements of each card for further interactions.
 
-Overall, this section demonstrates efficient use of templates, dynamic DOM manipulation, modular data handling, and TypeScript-based development practices to build a scalable and interactive product listing system.Product Counter Page
+Overall, this section demonstrates efficient use of templates, dynamic DOM manipulation, modular data handling, and TypeScript-based development practices to build a scalable and interactive product listing system.
 
+Product Counter Page
 To implement the product counter functionality, the first step is to reference the parent container (e.g., stockContainer) within the product clone. This container includes the increment button, decrement button, and the quantity display element.
 
 After attaching the necessary event listeners, define a function named productCounterPage, which accepts parameters such as id, stockValue, and event.
@@ -90,3 +91,32 @@ The updated quantity should be reflected both visually and in the element’s at
 productQuantity.innerText = quantity; productQuantity?.setAttribute("total-quantity", String(quantity));
 
 Finally, return the updated quantity value if needed for further processing.
+
+Add To Cart Page
+After implementing the increment and decrement functionality, the next step is to create a separate Add To Cart page. This page will handle the cart operations whenever a user clicks the Add to Cart button on a specific product card.
+
+On the displayProduct page, we first obtain the product reference using productClone. After that, event listeners are attached to each product card, and the addToCart() function is triggered with parameters such as id, price, and stock.
+
+Next, we create the Add To Cart page. Here, we identify the specific product card selected by the user, allowing us to access the product details and the quantity chosen by the user.
+
+Once we retrieve the product quantity and price, we calculate the total amount by multiplying:
+
+totalAmount = price * quantity;
+
+The calculated total amount for each item needs to be stored in Local Storage. For this, we use the three primary Local Storage methods:
+
+localStorage.setItem() localStorage.getItem() localStorage.removeItem()
+
+To manage cart data efficiently, we create a function that stores product details in the following format:
+
+{ id, quantity, price }
+
+This data is saved inside Local Storage.
+
+Additionally, a helper function named getCartProductLS() is created. This function is called inside the Add To Cart page so that whenever cart data needs to be updated, we can directly use localStorage.setItem() and pass the updated values.
+
+i. getCartProductLS()
+
+In this function, we initialize a variable that directly retrieves data from Local Storage using localStorage.getItem().
+
+If no data exists, the function returns an empty array []. If cart data is already stored from the Add To Cart page, the function returns that stored data, making it easy to access and update whenever required.
